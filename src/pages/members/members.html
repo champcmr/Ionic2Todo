@@ -1,0 +1,24 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Members List</ion-title>
+    </ion-navbar>
+</ion-header>   
+
+<ion-content>
+    <ion-list>        
+        <button ion-item *ngFor="let member of members" (click)="fnMemberTapped($event, member)">  
+            <!--<ion-checkbox color="dark" checked="true" item-left></ion-checkbox>          -->
+            <span>{{member.first_name}}</span>
+            <span>{{member.last_name}}</span>
+        </button>
+    </ion-list>
+    
+    <ion-fab right bottom>
+        <button ion-fab mini (click)="addMember()">
+            <ion-icon name="add"></ion-icon>
+        </button>
+    </ion-fab>
+</ion-content>
